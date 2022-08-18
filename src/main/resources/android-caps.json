@@ -1,0 +1,9 @@
+{
+  "appium:deviceName": "emulator-5554",
+  "appium:platformName": "android",
+  "appium:appPackage": "com.guru.webguru",
+  "appium:appActivity": ".MainActivity",
+  "appium:noReset": true,
+  "appium:uiautomator2ServerReadTimeout": 500000
+
+}
