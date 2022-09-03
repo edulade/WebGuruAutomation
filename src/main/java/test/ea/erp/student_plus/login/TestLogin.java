@@ -77,7 +77,7 @@ public class TestLogin {
             System.out.println("Password is " + mainLoginPge.getElement(By.xpath(locator)).getText());
             WebElement el4 = (WebElement) mainLoginPge.getElement(By.xpath("//android.widget.Button[@content-desc=\"Submit\"]"));
             el4.click();
-            System.out.println("Login page is now displayed" + el4.getText());
+            System.out.println("Invalid login" + el4.getText());
             mainLoginPge.waitForElementToBePresent(By.xpath("//android.widget.Button[@content-desc=\"OK\"]"));
             WebElement el5 = (WebElement) mainLoginPge.getElement(By.xpath("//android.widget.Button[@content-desc=\"OK\"]"));
             el5.click();
