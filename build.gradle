@@ -32,14 +32,28 @@ task runTests(type: Test) {
 
 
 dependencies {
-    implementation 'io.appium:java-client:7.5.1'
-    implementation 'org.seleniumhq.selenium:selenium-server:3.141.59'
-    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    implementation group: 'io.appium', name: 'java-client', version: '8.1.1'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '4.0.0-alpha-2'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.4.0'
+    implementation group: 'org.seleniumhq.selenium', name: 'grid', version: '4.0.0-alpha-2'
+    implementation group: 'net.jcip', name: 'jcip-annotations', version: '1.0'
+    implementation group: 'org.yaml', name: 'snakeyaml', version: '1.30'
     implementation 'com.fasterxml:jackson-xml-databind:0.6.2'
+    implementation group: 'org.codehaus.jackson', name: 'jackson-xc', version: '1.9.2'
+    implementation group: 'org.codehaus.woodstox', name: 'stax2-api', version: '3.1.0'
+    implementation group: 'javax.xml.stream', name: 'stax-api', version: '1.0-2'
     implementation group: 'org.testng', name: 'testng', version: '7.6.1'
     implementation group: 'org.webjars', name: 'jquery', version: '3.6.0'
-    implementation 'io.github.testsigma-eng:appium-flutterfinder-java:0.1.1'
+    implementation group: 'io.github.testsigma-eng', name: 'appium-flutterfinder-java', version: '0.1.1'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0-alpha7'
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0-alpha7'
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
 
 
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'org.xerial:sqlite-jdbc:3.34.0'
+    }
 }

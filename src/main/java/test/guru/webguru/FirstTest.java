@@ -8,7 +8,6 @@ import core.driver.DriverManager;
 import exceptions.PlatformNotSupportException;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -33,10 +32,10 @@ public class FirstTest extends BaseTest {
 
         AppiumDriver driver = (new DriverManager()).getInstance(Target.ANDROID);
 
-        FlutterFinder finder = new FlutterFinder(driver);
+//        FlutterFinder finder = new FlutterFinder(driver);
 
-        WebElement  el5 = (WebElement) driver.findElementByAccessibilityId(" Login ");
-        el5.click();
+//        WebElement  el5 = (WebElement) driver.findElementByAccessibilityId(" Login ");
+//        el5.click();
 
 //        List<WebElement> lst = driver.findElementsByClassName("android.widget.EditText");
 //
@@ -66,21 +65,20 @@ public class FirstTest extends BaseTest {
 //el8.click();
 
 //        MobileElement element = new FlutterElement(finder.byValueKey("Assignments"));
-        driver.getContext();
         WebElement el3 = driver.findElement(By.name("Assignments"));
 //        WebElement el3 = driver.findElement(By.id("Assignments"));
 //        WebElement el3 =  finder.byValueKey(driver.getContext()).findElementByAccessibilityId("Assignments");
         el3.click();
         driver.navigate().back();
         driver.navigate();
-        WebElement el4 = (WebElement) driver.findElementByAccessibilityId("Assignments");
-        el4.click();
-        driver.navigate().back();
-        WebElement el6 = (WebElement) driver.findElementByAccessibilityId("Class Schedule");
-        el6.click();
-        driver.navigate().back();
-        WebElement el7 = (WebElement) driver.findElementByAccessibilityId("Back");
-        el7.click();
+//        WebElement el4 = (WebElement) driver.findElementByAccessibilityId("Assignments");
+//        el4.click();
+//        driver.navigate().back();
+//        WebElement el6 = (WebElement) driver.findElementByAccessibilityId("Class Schedule");
+//        el6.click();
+//        driver.navigate().back();
+//        WebElement el7 = (WebElement) driver.findElementByAccessibilityId("Back");
+//        el7.click();
         driver.navigate().back();
     }
 

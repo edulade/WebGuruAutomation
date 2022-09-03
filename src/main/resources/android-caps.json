@@ -1,9 +1,10 @@
 {
-  "appium:deviceName": "emulator-5554",
+  "appium:deviceName": "emulator-5556",
   "appium:platformName": "android",
-  "appium:appPackage": "com.guru.webguru",
+  "appium:appPackage": "com.ea.erp.student_plus",
   "appium:appActivity": ".MainActivity",
   "appium:noReset": true,
-  "appium:uiautomator2ServerReadTimeout": 500000
-
+  "appium:uiautomator2ServerReadTimeout": 10000,
+  "appium:newCommandTimeout": 3600,
+  "appium:connectHardwareKeyboard": true
 }
