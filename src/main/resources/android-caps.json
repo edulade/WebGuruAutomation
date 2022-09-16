@@ -1,5 +1,5 @@
 {
-  "appium:deviceName": "emulator-5556",
+  "appium:deviceName": "emulator-5554",
   "appium:platformName": "android",
   "appium:appPackage": "com.ea.erp.student_plus",
   "appium:appActivity": ".MainActivity",
