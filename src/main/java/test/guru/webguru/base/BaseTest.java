@@ -13,7 +13,7 @@ import org.testng.annotations.BeforeTest;
 
 import java.io.IOException;
 
-public class BaseTest {
+public abstract class BaseTest {
     protected AppiumDriver appiumDriver;
     protected PropertiesReader reader = new PropertiesReader();
 

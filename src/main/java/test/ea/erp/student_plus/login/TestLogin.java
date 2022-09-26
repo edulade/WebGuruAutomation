@@ -3,6 +3,7 @@ package test.ea.erp.student_plus.login;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -20,7 +21,7 @@ public class TestLogin extends BaseTest {
     private String userName = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText[1]";
     private String password = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText[2]";
     private String submitBtn = "//android.widget.Button[@content-desc=\"Submit\"]";
-
+    private MainLoginActivity mainLoginPge;
     public TestLogin() {
         this.appiumDriver = createDriver(Target.ANDROID);
     }
@@ -32,17 +33,20 @@ public class TestLogin extends BaseTest {
     public TestLogin(AppiumDriver driver) {
         this.appiumDriver = driver;
     }
-
     @Test
     public void testInvalidValidLogin() {
         testInvalidUserId();
         testInvalidPassword();
     }
-    @Test
-    public void testValidLogin() {
-        MainLoginActivity mainLoginPge = new MainLoginActivity(appiumDriver);
+
+    @BeforeMethod(dependsOnMethods ={"testInvalidValidLogin", "testValidLogin"} )
+    public void beforeStart() {
+        mainLoginPge = new MainLoginActivity(appiumDriver);
         PageFactory.initElements(appiumDriver, mainLoginPge);
         mainLoginPge.waitForElementToBePresent(By.xpath("//android.widget.Button[@content-desc=\"Submit\"]"));
+    }
+    @Test
+    public void testValidLogin() {
         if (mainLoginPge.isScreenDisplayed()) {
             System.out.println("Login page is now displayed");
 //            String locator = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText[1]";
@@ -67,7 +71,7 @@ public class TestLogin extends BaseTest {
         }
 
         }
-    @Test
+//    @Test
     public void testInvalidUserId() {
         MainLoginActivity mainLoginPge = new MainLoginActivity(appiumDriver);
         PageFactory.initElements(appiumDriver, mainLoginPge);
@@ -97,7 +101,7 @@ public class TestLogin extends BaseTest {
 
     }
 
-    @Test
+//    @Test
     public void testInvalidPassword() {
         MainLoginActivity mainLoginPge = new MainLoginActivity(appiumDriver);
         PageFactory.initElements(appiumDriver, mainLoginPge);

@@ -1,13 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Suite1" verbose="1" >
+<suite name="regreassion" verbose="1" >
 <!--    <test name="Regression1"   >-->
 <!--        <packages>-->
 <!--            <package name="ea.erp.student_plus" />-->
 <!--        </packages>-->
 <!--    </test>-->
 
-    <test name="Regression1">
+    <test name="Login">
         <parameter name = "platform" value="Android"/>
         <classes>
             <class name="test.ea.erp.student_plus.login.TestLogin"/>
